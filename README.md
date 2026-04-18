@@ -1,6 +1,12 @@
-# libnova.spec
+# agex
 
-Framework interno de **Spec-Driven Development (SDD)** para OpenAccess CMS.
+> **Agent Experience (AX)** — análogo a DX (Developer Experience), pero
+> aplicado a cómo los agentes de IA operan en tu sistema: qué contexto
+> encuentran, qué herramientas tienen disponibles y qué memoria acumulan
+> entre sesiones.
+
+Framework de **Spec-Driven Development (SDD)** que estructura el ciclo
+de trabajo de Claude Code en proyectos de software.
 
 Convierte tickets de Jira en Pull Requests con specs cerradas, memoria
 arquitectónica viva y trazabilidad end-to-end.
@@ -13,7 +19,7 @@ Los tickets llegan vagos. El contexto arquitectónico vive en la cabeza
 de quien lleva más tiempo. Las decisiones se pierden. Los juniors tardan
 semanas en ser productivos. Cada cambio empieza desde cero.
 
-libnova.spec fuerza un flujo donde:
+agex fuerza un flujo donde:
 
 - Las decisiones se cierran **antes** de escribir código
 - El contexto arquitectónico se carga **automáticamente**
