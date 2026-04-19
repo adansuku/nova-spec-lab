@@ -63,7 +63,22 @@ Crea el PR con `gh pr create --base <base-resuelta> --title "<título>"
 
 **Descripción**: usa la estructura de `novaspec/templates/pr-body.md` como plantilla.
 
-### 7. Resumen final
+### 7. Cerrar ticket en Jira
+
+Si `novaspec/config.yml` tiene `jira.skill` con valor, invocar la skill `jira-integration` para transicionar el ticket a "Listo":
+
+```bash
+AUTH=$(echo -n "<email>:<token>" | base64)
+curl -s -X POST \
+  -H "Authorization: Basic $AUTH" \
+  -H "Content-Type: application/json" \
+  "https://<jira-url>/rest/api/3/issue/<TICKET-ID>/transitions" \
+  -d '{"transition": {"id": "41"}}'
+```
+
+Confirmar al usuario: "Ticket <TICKET-ID> marcado como Listo en Jira ✓"
+
+### 8. Resumen final
 
 ```
 ## Ticket <TICKET-ID> cerrado
@@ -73,6 +88,7 @@ Crea el PR con `gh pr create --base <base-resuelta> --title "<título>"
 - CONTEXT.md actualizados: <lista o "ninguno">
 - Commits: <número>
 - PR: <link>
+- Jira: <TICKET-ID> → Listo ✓ (o "Jira no configurado")
 ```
 
 ## Reglas
