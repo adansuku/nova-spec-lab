@@ -14,8 +14,9 @@ No implementes nada. No propongas spec. Solo orquesta.
 
 ### 1. Obtener el ticket
 
-Si existe la skill `jira-integration`, úsala para bajar el ticket.
-Si no, pide al usuario que pegue:
+Lee `novaspec/config.yml` → `jira.skill`.
+- Si tiene valor, invoca esa skill para bajar el ticket.
+- Si está vacío o ausente, pide al usuario que pegue:
 - título
 - descripción
 - criterios de aceptación
