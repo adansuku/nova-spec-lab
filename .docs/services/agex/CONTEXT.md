@@ -41,7 +41,7 @@ Los tickets clasificados como `quick-fix` saltan `/nova-spec` y `/nova-plan`.
 Siete archivos Markdown con frontmatter YAML. Claude Code los descubre
 a través del symlink `.claude/commands → ../novaspec/commands`.
 
-- `nova-start.md` — orquestador de inicio; clasifica el ticket y crea rama
+- `nova-start.md` — orquestador de inicio; clasifica el ticket, crea rama e invoca el agente `context-loader`
 - `nova-spec.md` — usa la skill `close-requirement`; genera `proposal.md`
 - `nova-plan.md` — genera `plan.md` y `tasks.md` a partir de la spec
 - `nova-build.md` — ejecuta `tasks.md` en secuencia; para solo ante bloqueantes o decisiones no cerradas
@@ -51,10 +51,9 @@ a través del symlink `.claude/commands → ../novaspec/commands`.
 
 ### Skills (`novaspec/skills/`)
 
-Cuatro skills autocargadas por contexto. Claude Code las descubre
+Tres skills autocargadas por contexto. Claude Code las descubre
 a través del symlink `.claude/skills → ../novaspec/skills`.
 
-- `load-context` — carga CONTEXT.md, ADRs y specs relevantes al inicio
 - `close-requirement` — cierra decisiones abiertas con preguntas estructuradas
 - `write-adr` — crea Architectural Decision Records en `.docs/adr/`
 - `update-service-context` — actualiza CONTEXT.md de un servicio al cerrar ticket
@@ -94,8 +93,10 @@ tampoco existe, pregunta al usuario recomendando fijarla en `config.yml`.
 
 ### Agentes (`novaspec/agents/`)
 
-Contiene agentes que ejecutan operaciones pesadas en contexto aislado.
-Primer agente: `nova-review-agent.md` (code review completo).
+Ejecutan operaciones pesadas en contexto aislado (ver ADR-0003):
+
+- `nova-review-agent.md` — code review en 4 ejes; escribe `review.md`
+- `context-loader.md` — carga CONTEXT.md y ADRs; devuelve resumen estructurado
 
 ### Guardrails (`novaspec/guardrails/`)
 

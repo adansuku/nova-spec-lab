@@ -61,7 +61,9 @@ Antes de crear:
 
 ### 5. Cargar contexto
 
-Invoca la skill `load-context` con los servicios identificados.
+Invoca el agente `novaspec/agents/context-loader.md` pasando los servicios
+identificados en el paso 3 como argumentos (separados por espacios).
+Muestra el resumen devuelto por el agente.
 
 ### 6. Resumen y siguiente paso
 
