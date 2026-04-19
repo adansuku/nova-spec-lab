@@ -13,4 +13,8 @@ branch:
   base: main            # rama base del flujo (checkout en /nova-start, --base en /nova-wrap)
 
 jira:
-  skill: jira-integration  # nombre de la skill para bajar tickets; déjalo vacío para deshabilitar
+  skill: jira-integration         # nombre de la skill para bajar tickets; déjalo vacío para deshabilitar
+  url: https://tu-org.atlassian.net
+  project: PROJ
+  email: tu@email.com
+  token: ${JIRA_API_TOKEN}        # crea el token en id.atlassian.com/manage-profile/security/api-tokens
