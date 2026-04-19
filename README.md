@@ -1,15 +1,23 @@
-# nova-spec
+<p align="center">
+  <img src="img/novaspec-logo.svg" alt="novaspec" width="480">
+</p>
+
+<p align="center">
+  Framework de <strong>Spec-Driven Development (SDD)</strong> que estructura el ciclo<br>
+  de trabajo de Claude Code en proyectos de software.
+</p>
+
+<p align="center">
+  Convierte tickets de Jira en Pull Requests con specs cerradas, memoria<br>
+  arquitectónica viva y trazabilidad end-to-end.
+</p>
+
+---
 
 > **Agent Experience (AX)** — análogo a DX (Developer Experience), pero
 > aplicado a cómo los agentes de IA operan en tu sistema: qué contexto
 > encuentran, qué herramientas tienen disponibles y qué memoria acumulan
 > entre sesiones.
-
-Framework de **Spec-Driven Development (SDD)** que estructura el ciclo
-de trabajo de Claude Code en proyectos de software.
-
-Convierte tickets de Jira en Pull Requests con specs cerradas, memoria
-arquitectónica viva y trazabilidad end-to-end.
 
 ---
 
