@@ -15,6 +15,6 @@ branch:
 jira:
   skill: jira-integration         # nombre de la skill para bajar tickets; déjalo vacío para deshabilitar
   url: https://tu-org.atlassian.net
-  project: PROJ
+  project: NOVA
   email: tu@email.com
   token: ${JIRA_API_TOKEN}        # crea el token en id.atlassian.com/manage-profile/security/api-tokens

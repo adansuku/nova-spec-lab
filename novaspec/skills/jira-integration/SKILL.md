@@ -76,6 +76,10 @@ Tipos de issue comunes: `Story`, `Task`, `Bug`, `Sub-task`.
 
 Tras crear, mostrar la clave asignada (campo `key` en la respuesta) y la URL directa al ticket.
 
+### Convención de título
+
+El proyecto Jira es `NOVA`. El summary usa el formato `NOVA-<NNN>: <título>` donde `<NNN>` es el número del ticket con cero padding a 3 dígitos (ej: NOVA-17 → `NOVA-017`). Para conocer el número antes de crear, consulta el último ticket del proyecto con la API de búsqueda y suma 1.
+
 ## Notas
 
 - Si `token` no está en config.yml, pedir al usuario que lo configure.
