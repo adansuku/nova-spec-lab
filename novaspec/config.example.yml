@@ -1,4 +1,7 @@
-# nova-spec — configuración del framework
+# nova-spec — configuración del framework (plantilla)
+# Copia este archivo a novaspec/config.yml y rellena con tus datos.
+# novaspec/config.yml está gitignored; no lo subas al repo.
+
 branch:
   pattern: "{type}/{ticket}-{slug}"
   types:
@@ -14,7 +17,7 @@ branch:
 
 jira:
   skill: jira-integration         # nombre de la skill para bajar tickets; déjalo vacío para deshabilitar
-  url: https://tu-org.atlassian.net
-  project: NOVA
-  email: tu@email.com
+  url: https://your-workspace.atlassian.net
+  project: PROJ
+  email: you@example.com
   token: ${JIRA_API_TOKEN}        # crea el token en id.atlassian.com/manage-profile/security/api-tokens

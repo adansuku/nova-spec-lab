@@ -2,3 +2,4 @@ context/backlog/*
 .claude/*
 .opencode/*
 .env
+novaspec/config.yml
