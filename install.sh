@@ -147,6 +147,7 @@ pick_dir_fzf() {
 
 resolve_dest_dir() {
   if [[ -n "$DEST_DIR" ]]; then
+    DEST_DIR="${DEST_DIR/#\~/$HOME}"
     if [[ ! -d "$DEST_DIR" ]]; then
       mkdir -p "$DEST_DIR"
     fi
@@ -203,6 +204,7 @@ if [[ "$SCRIPT_DIR" == "$PWD" ]]; then
         echo -e "${RED}✗ Ruta vacía${NC}"
         exit 1
       fi
+      DEST_DIR="${DEST_DIR/#\~/$HOME}"
       if [[ ! -d "$DEST_DIR" ]]; then
         mkdir -p "$DEST_DIR"
       fi
@@ -340,9 +342,11 @@ if [[ "$TARGET" == "claude" ]] || [[ "$TARGET" == "both" ]]; then
   mkdir -p .claude
   (
     cd .claude
-    [[ -L commands ]] || ln -s ../novaspec/commands commands
-    [[ -L skills ]]   || ln -s ../novaspec/skills skills
-    [[ -L agents ]]   || ln -s ../novaspec/agents agents
+    for name in commands skills agents; do
+      [[ -L "$name" ]] && continue
+      [[ -d "$name" ]] && rm -rf "$name"
+      ln -s "../novaspec/$name" "$name"
+    done
   )
 fi
 
@@ -351,9 +355,11 @@ if [[ "$TARGET" == "opencode" ]] || [[ "$TARGET" == "both" ]]; then
   mkdir -p .opencode
   (
     cd .opencode
-    [[ -L commands ]] || ln -s ../novaspec/commands commands
-    [[ -L skills ]]   || ln -s ../novaspec/skills skills
-    [[ -L agents ]]   || ln -s ../novaspec/agents agents
+    for name in commands skills agents; do
+      [[ -L "$name" ]] && continue
+      [[ -d "$name" ]] && rm -rf "$name"
+      ln -s "../novaspec/$name" "$name"
+    done
   )
 
   echo -e "${YELLOW}[5/6] Configurando OpenCode${NC}"
